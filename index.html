@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational Blood Donor Detection System demo">
+    <title>BloodConnect | Blood Donor Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header" id="home">
+        <nav class="navbar">
+            <a href="#home" class="logo">🩸 BloodConnect</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#register">Register</a>
+                <a href="#search">Find Donors</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-content">
+                <span class="hero-tag">GIVE BLOOD · HELP SAVE LIVES</span>
+                <h1>Every Drop <span>Makes a Difference</span></h1>
+                <p>
+                    Explore a demo blood donor directory and learn how
+                    donors can be searched by blood group and city.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#search" class="btn btn-primary">Find a Donor</a>
+                    <a href="#register" class="btn btn-outline">Register as Donor</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="blood-icon">🩸</div>
+                <h2>Donate Blood</h2>
+                <p>A small act can make a big difference.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="stats-section">
+            <div class="section-heading">
+                <span class="eyebrow">OUR DEMO DIRECTORY</span>
+                <h2>Directory Statistics</h2>
+                <p>These numbers update when demo records are added or deleted.</p>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3 id="totalDonors">0</h3>
+                    <p>Demo Donors</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">🧬</div>
+                    <h3 id="bloodGroupsCount">0</h3>
+                    <p>Blood Groups Represented</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">❤️</div>
+                    <h3>One Goal</h3>
+                    <p>Helping People Connect</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-section" id="about">
+            <div class="section-heading">
+                <span class="eyebrow">ABOUT THE PROJECT</span>
+                <h2>How It Works</h2>
+                <p>
+                    This student project demonstrates a simple donor directory.
+                    It is not a real blood bank or emergency service.
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="info-icon">📝</div>
+                    <h3>Register</h3>
+                    <p>Add a fictional donor record to the browser's demo directory.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">🔎</div>
+                    <h3>Search</h3>
+                    <p>Search demo records using a selected blood group and city.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">🤝</div>
+                    <h3>Connect Safely</h3>
+                    <p>Real donations require professional checks and appropriate consent.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="form-section" id="register">
+            <div class="section-heading">
+                <span class="eyebrow">JOIN THE DEMO DIRECTORY</span>
+                <h2>Donor Registration</h2>
+                <p>Use fictional details while testing this project.</p>
+            </div>
+
+            <form id="donorForm" class="form-card">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" maxlength="60"
+                               placeholder="Enter demo name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="bloodGroup">Blood Group</label>
+                        <select id="bloodGroup" required>
+                            <option value="">Select blood group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="18" max="100"
+                               placeholder="18 or above" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="city">City</label>
+                        <input type="text" id="city" maxlength="60"
+                               placeholder="Enter city" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="area">Area / Locality</label>
+                        <input type="text" id="area" maxlength="80"
+                               placeholder="Enter demo locality" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Demo Contact Number</label>
+                        <input type="tel" id="phone" maxlength="20"
+                               placeholder="Use fictional digits" required>
+                    </div>
+                </div>
+
+                <label class="consent-label">
+                    <input type="checkbox" id="consent" required>
+                    <span>I understand this is an educational demo and I am using fictional test data.</span>
+                </label>
+
+                <button type="submit" class="btn-submit">Register Demo Donor</button>
+                <p id="message" class="message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="search-section" id="search">
+            <div class="section-heading">
+                <span class="eyebrow">DONOR DIRECTORY</span>
+                <h2>Find Blood Donors</h2>
+                <p>Search by blood group and city to find matching demo records.</p>
+            </div>
+
+            <form id="searchForm" class="form-card search-form">
+                <div class="field">
+                    <label for="searchGroup">Required Blood Group</label>
+                    <select id="searchGroup" required>
+                        <option value="">Select blood group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="searchCity">City</label>
+                    <input type="text" id="searchCity" maxlength="60"
+                           placeholder="Enter city name" required>
+                </div>
+
+                <div class="search-buttons">
+                    <button type="submit" class="btn-submit">Search Donors</button>
+                    <button type="button" id="clearSearch" class="btn-clear">Clear Search</button>
+                </div>
+            </form>
+
+            <div id="results" class="results-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="demo-tools">
+            <div>
+                <h2>Demo Data Controls</h2>
+                <p>Delete the test records stored in this browser.</p>
+            </div>
+            <button type="button" id="clearAllDonors" class="btn-delete">
+                Delete All Demo Records
+            </button>
+            <p id="adminMessage" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <aside class="safety-notice">
+            <h2>Important Safety Note</h2>
+            <p>
+                This website is an educational demo, not a verified donor service.
+                Do not enter real personal information. Browser storage is not a
+                secure database. Blood group alone does not establish transfusion
+                compatibility. For real donations, contact a licensed blood bank
+                or healthcare professional. In an emergency, contact local
+                emergency services or a hospital.
+            </p>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <p>🩸 BloodConnect — Blood Donor Detection System</p>
+        <p>Educational project built with HTML, CSS and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
